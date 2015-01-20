@@ -1,0 +1,86 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/departureDialogRowWhole"
+        android:background="@drawable/selectable_background_cardbank"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:paddingLeft="20dp"
+        >
+
+        <RelativeLayout
+            android:id="@+id/dialogDepartureMainLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            >
+
+            <TextView
+                android:id="@+id/dialogTimeText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/LightBackgroundText.Large"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp"
+                android:text="2min"
+                />
+
+            <TextView
+                android:id="@+id/dialogRealtimeText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/LightBackgroundText.Small"
+                android:layout_below="@+id/dialogTimeText"
+                android:layout_toRightOf="@+id/dialogRealtimeImage"
+                android:paddingBottom="15dp"
+                android:paddingLeft="10dp"
+                android:text="Isn't realtime"
+                />
+
+            <ImageView
+                android:id="@+id/dialogRealtimeImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/icon_realtime_off"
+                android:layout_alignParentLeft="true"
+                android:paddingBottom="15dp"
+                android:paddingLeft="10dp"
+                android:layout_alignBottom="@id/dialogRealtimeText"
+                android:layout_alignTop="@id/dialogRealtimeText" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/dialogMessageText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/LightBackgroundText.Small"
+            android:text="Message placeholer for short messages, no messages and really long messages"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@id/dialogDepartureMainLayout"
+            android:visibility="gone"
+            />
+
+        <TextView
+            android:id="@+id/dialogDebugText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/LightBackgroundText.Small"
+            android:text="Debug placeholer"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/dialogMessageText"
+            android:visibility="gone"
+            />
+
+    </LinearLayout>
+
+</LinearLayout>

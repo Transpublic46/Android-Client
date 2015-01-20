@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">SL Appen</string>
+    <string name="yes">Ja</string>
+    <string name="no">Nein</string>
+
+    <string name="action_search">Suche</string>
+    <string name="action_settings">Einschtellungen</string>
+    <string name="action_about">Um</string>
+    <string name="action_help">Hilfe</string>
+    <string name="action_share">App teilen</string>
+    <string name="action_community">Community</string>
+    <string name="action_beta">Beta feedback</string>
+    <string name="action_refresh">Aktualisieren</string>
+
+    <string name="preference_debug_title">ALPHA ONLY Debug</string>
+    <string name="preference_debug_summary">Activate debug to see statistics.</string>
+
+    <string name="preference_language_title">Sprache</string>
+    <string name="preference_language_dialog_title">Wähl Sprache</string>
+    <string name="preference_language_summary">Welche Sprache willst du nützen?</string>
+    <string name="preference_language_default">English</string>
+
+    <string name="menu_settings">Einstellungen</string>
+    <string name="title_main_activity">SL Avgangstavla</string>
+    <string name="image">Image thumbnail</string>
+    <string name="title">Titel</string>
+
+    <string name="tickerAboutToDepart">Abreißt gleich</string>
+    <string name="tickerDepartured">Abgereist</string>
+
+    <string name="title_activity_main">CardsUI</string>
+    <string name="desc">Beschreibung</string>
+    <string name="overflow">Menu Overflow</string>
+    <string name="color_stripe">Farbe</string>
+
+    <string name="timehelptext">" "</string>
+
+    <string name="betaDialogTitle">Beta app feedback</string>
+    <string name="betaDialogTextView">Beschreiben Sie Ihr Problem. Wir werden automatisch technische Informationen hinzugefügen. Keine Information mit welche wir ihnen identifizieren können wird mitgeschickt.</string>
+    <string name="betaDialogEditTextGot">Was ist es was Sie sehen, aber nicht sehen wollen?</string>
+    <string name="betaDialogEditTextWanted">Welche Informationen fehlt?</string>
+    <string name="betaDialogButtonLeft">Abbrechen</string>
+    <string name="betaDialogButtonRight">Senden</string>
+
+    <string name="departureDialogButtonLeft">App</string>
+    <string name="is_realtime">Realzeit</string>
+    <string name="not_realtime">Nicht-Realzeit</string>
+
+    <string name="demotedButtonText">Entfernt! Rückgängig machen?</string>
+
+    <string name="shareMessage">Hallo! Ich bin auf dem Weg richtung %1$s mit Abfahrt um %2$s von %3$s meint SL Appen, http://bit.ly/sl-appen</string>
+    <string name="shareApp">"Ich teste Sl Appen für Android und das kannst du auch! Besuche http://bit.ly/sl-appen um zu beginnen."</string>
+
+    <string name="errorTextNotConnected">Wir konnten keine Verbindung zum Internet herstellen. Überprüfen Sie Ihre Verbindung und versuchen Sie es erneut.</string>
+    <string name="errorTextEmptyResponseNoPosition">Wir konnten Ihre Position nicht ablesen. Überprüfen Sie Ihre Positions-Einstellungen und versuchen Sie erneut.</string>
+    <string name="errorTextEmptyResponseNoDepartures">Wir konnten keine Abfahrten für Ihren Standort, Zeit oder Suche finden. Bitte versuchen Sie es später noch einmal.</string>
+    <string name="errorTextTimeout">Sorry! Es scheint wie wir Schwierigkeiten haben mit dem Server zu kommunizieren. Bitte versuchen Sie es später noch einmal.</string>
+    <string name="errorTextDefault">Peinlich! Ein unerwartetes Problem ist aufgetreten. Bitte versuchen Sie es erneut.</string>
+
+    <string name="privacyPolicyTitle">Integritetspolicy</string>
+    <string name="privacyPolicyText">Lesen Sie unsere Integritetspolicy, um herauszufinden, wie wir Ihre Daten handhaben.</string>
+    <string name="privacyPolicyButton">Integritetspolicy Version 1</string>
+    <string name="privacyPolicyUrl">https://docs.google.com/document/d/1nFk8jMsLN-EIo6KHZKQk6eeyhaABoEtROgEYdGyD08A</string>
+
+    <string name="clearFavorites">Favoriten löschen</string>
+    <string name="clearFavoritesSummary">Lösch den Speicher von Abfahrten die Sie als Favorit markiert haben.</string>
+    <string name="clearFavoritesCleared">Ihre Favoriten sind jetzt gelöscht!</string>
+    <string name="clearRemoved">Unintressante Abfahrten löschen</string>
+    <string name="clearRemovedSummary">Lösch den Speicher von Abfahrten die Sie als uninteressant markiert haben.</string>
+    <string name="clearRemovedCleared">Ihre unintressante Abfahrten sind jetzt gelöscht!</string>
+
+    <string name="cabCardText">Rufen Sie ein Taxi von Taxi Stockholm</string>
+    <string name="cabCardTextConfirm">Sicher, dass Sie ein Taxi rufen wollen?</string>
+    <string name="cabCardTextConfirmLocation">Sie befinden sich bei %1$s</string>
+
+    <string name="card_guide_string_title">Fegen Sie mich weg!</string>
+    <string name="card_guide_string_body">Fegen Sie Karten weg, die Sie unintressant finden. Versuchen Sie es mit mir!</string>
+
+    <string name="proximityTimeToLeave">Gehen Sie jetzt um die Abfahrt bei zeit zu erreichen</string>
+    <string name="proximityRunForIt">Sie Schaffen es vielleicht wenn Sie Rennen</string>
+    <string name="proximityImpossible">Sie werden die Abfahrt verpassen</string>
+    <string name="proximityRelax">Sie können noch etwas warten</string>
+
+    <string name="trackingEnabled">Eine Notification wurde erstellt</string>
+    <string name="trackingError">Es gibt schon eine Notification für dieser Abfahrt!</string>
+</resources>

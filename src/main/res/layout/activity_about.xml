@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+
+<RelativeLayout
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="10dp"
+    >
+
+        <TextView
+            android:id="@+id/version"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:text="Version: "
+            style="@android:style/TextAppearance.Holo.Medium" />
+
+        <TextView
+            android:id="@+id/versionName"
+            android:layout_below="@id/version"
+            android:layout_alignParentLeft="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Version"
+            style="@android:style/TextAppearance.Large" />
+
+    <TextView
+        android:id="@+id/madeBy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/versionName"
+        android:text="Made by:"
+        style="@android:style/TextAppearance.Holo.Medium"
+        android:layout_marginTop="10dp"
+        />
+
+
+    <TextView
+        android:id="@+id/ownCredits"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/madeBy"
+        android:text="Theo Franzén and Erik Övelius"
+        style="@android:style/TextAppearance.Holo.Large" />
+
+    <TextView
+        android:id="@+id/privacyPolicyTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ownCredits"
+        android:text="@string/privacyPolicyTitle"
+        style="@android:style/TextAppearance.Holo.Large"
+        android:layout_marginTop="10dp"/>
+
+    <TextView
+        android:id="@+id/privacyPolicyText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/privacyPolicyTitle"
+        android:text="@string/privacyPolicyText"
+        style="@android:style/TextAppearance.Holo.Medium"
+        />
+    <Button
+        android:id="@+id/privacyPolicyButton"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/privacyPolicyText"
+        android:text="@string/privacyPolicyButton"
+        android:onClick="privacyPolicyButtonClicked"
+        />
+
+    <TextView
+        android:id="@+id/otherCredits"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/privacyPolicyButton"
+        android:text="Credits:"
+        style="@android:style/TextAppearance.Holo.Medium"
+        android:layout_marginTop="10dp"
+        />
+
+    />
+
+    <TextView
+        android:id="@+id/cardsCredits"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/otherCredits"
+        android:text="Contains code from CardsUI under Apache license"
+        />
+
+</RelativeLayout>
+
+    <ImageView
+        android:layout_width="100px"
+        android:layout_height="100px"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:id="@+id/versionImage"
+        android:src="@drawable/beta"
+        android:onClick="trainPressed"/>
+
+</RelativeLayout>

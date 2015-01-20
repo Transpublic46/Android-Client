@@ -1,0 +1,59 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="se.poochoo"
+    android:versionCode="23"
+    android:versionName="Choksondik (Beta)">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
+    <uses-feature android:name="android.hardware.telephony"  android:required="false" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:logo="@drawable/action_app_icon"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme"
+        android:backupAgent="PrefBackupAgentHelper">
+
+        <activity
+            android:name="se.poochoo.MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="se.poochoo.SettingsActivity"
+            android:label="@string/action_settings"
+            android:parentActivityName="se.poochoo.MainActivity"/>
+        <activity
+            android:name="se.poochoo.AboutActivity"
+            android:label="@string/action_about"
+            android:parentActivityName="se.poochoo.MainActivity"/>
+        <activity
+            android:name="se.poochoo.DialogActivity"
+            android:theme="@style/LightTheme"
+            android:parentActivityName="se.poochoo.MainActivity"
+            />
+
+        <service android:name="se.poochoo.reminder.ReminderService"></service>
+
+        <service android:name="se.poochoo.widget.WidgetService" android:permission="android.permission.BIND_REMOTEVIEWS"></service>
+        <receiver android:name="se.poochoo.widget.SimpleWidgetProvider" android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"></action>
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/widget" />
+        </receiver>
+
+        <meta-data android:name="com.google.android.backup.api_key"
+            android:value="AEdPqrEAAAAIUnqlkoA7QCx0qneMxPuCabBj2wYhFfGFRgq1Tg" />
+    </application>
+
+</manifest>

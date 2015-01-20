@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:drawable="@drawable/button_star_on_pressed"
+        android:state_pressed="true"
+        android:state_checked="true"/>
+    <item android:drawable="@drawable/button_star_on_focused"
+        android:state_focused="true"
+        android:state_checked="true" />
+    <item android:drawable="@drawable/button_star_on_default"
+        android:state_checked="true" />
+
+    <item android:drawable="@drawable/button_star_off_pressed"
+        android:state_pressed="true"
+        android:state_checked="false"/>
+    <item android:drawable="@drawable/button_star_off_focused"
+        android:state_focused="true"
+        android:state_checked="false" />
+    <item android:drawable="@drawable/button_star_off_default"
+        android:state_checked="false" />
+
+
+
+</selector>

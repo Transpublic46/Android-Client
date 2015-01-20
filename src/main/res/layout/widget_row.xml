@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/wholerow"
+    >
+<RelativeLayout
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="8dp"
+    >
+
+    <RelativeLayout
+        android:id="@+id/clickRow"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:paddingTop="8dp"
+        android:paddingRight="8dp"
+        android:paddingBottom="8dp"
+        android:background="@color/white"
+        >
+
+<ImageView
+    android:id="@+id/typeimage"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentTop="true"
+    android:src="@drawable/icon_unknown"
+    android:layout_marginLeft="23dp"
+    />
+
+<TextView
+    android:id="@+id/widgeterrormessage"
+    style="@android:style/TextAppearance.Holo.Medium"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_toRightOf="@+id/typeimage"
+    android:layout_marginLeft="8dp"
+    android:textColor="@color/black"
+    android:text="error message placeholder that only is used for error messages"
+    android:visibility="gone"
+    />
+
+        <ImageView
+            android:id="@+id/realtimewidgetimage"
+            android:layout_toRightOf="@+id/typeimage"
+            android:layout_alignBottom="@id/typeimage"
+            android:layout_alignTop="@+id/timetext"
+            android:src="@drawable/icon_realtime_off"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            />
+
+<TextView
+    android:id="@+id/timetext"
+    style="@android:style/TextAppearance.Holo.Medium"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_toRightOf="@+id/realtimewidgetimage"
+    android:layout_alignBottom="@id/typeimage"
+    android:layout_marginLeft="8dp"
+    android:singleLine="true"
+    android:textColor="@color/black"
+    android:text="2 min (12:47)" />
+
+        <TextView
+            android:id="@+id/stationtext"
+            android:text="Stockholms T-central"
+            style="@android:style/TextAppearance.Holo.Medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/typeimage"
+            android:layout_toRightOf="@id/typeimage"
+            android:singleLine="true"
+            android:textColor="@color/black"
+            android:layout_marginLeft="8dp"
+            />
+
+<RelativeLayout
+    android:layout_height="wrap_content"
+    android:layout_width="wrap_content"
+    android:layout_toRightOf="@+id/typeimage"
+    android:layout_above="@id/timetext"
+    android:layout_below="@id/stationtext"
+    android:layout_marginLeft="8dp">
+
+    <TextView
+        android:id="@+id/arrow"
+        style="@android:style/TextAppearance.Holo.Medium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:textColor="@color/black"
+        android:text="→ "/>
+
+    <TextView
+        android:id="@+id/directiontext"
+        android:text="13 Norsborg"
+        style="@android:style/TextAppearance.Holo.Medium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@id/arrow"
+        android:singleLine="true"
+        android:textColor="@color/black"
+        />
+
+</RelativeLayout>
+
+<TextView
+    android:id="@+id/messagetext"
+    style="@android:style/TextAppearance.Holo.Small"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/typeimage"
+    android:layout_alignLeft="@+id/typeimage"
+    android:textColor="@color/black"
+    android:layout_marginTop="5dp"
+    android:text="This is a placeholdertext for whatever message a departure might have."
+    />
+
+<TextView
+    android:id="@+id/rowdebugtext"
+    style="@android:style/TextAppearance.Holo.Small"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/messagetext"
+    android:layout_alignLeft="@+id/typeimage"
+    android:textColor="@color/black"
+    android:text="This is a placeholdertext for whatever debug message a departure might have."
+    android:visibility="gone"
+    />
+
+<ImageView
+    android:id="@+id/stardeparture"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentTop="true"
+    android:layout_alignParentRight="true"
+    android:src="@drawable/icon_star_on"
+    android:layout_alignBottom="@+id/stationtext"
+    android:visibility="gone"/>
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/widgetdeparturecolor"
+        android:layout_width="15dp"
+        android:layout_height="fill_parent"
+        android:layout_alignTop="@+id/clickRow"
+        android:layout_alignBottom="@+id/clickRow"
+        android:background="@color/DarkGray"
+        android:clickable="false"
+        />
+
+</RelativeLayout>
+
+</LinearLayout>

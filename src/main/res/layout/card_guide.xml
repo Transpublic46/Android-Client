@@ -1,0 +1,56 @@
+<LinearLayout
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <View
+        android:id="@+id/departurecolor"
+        android:layout_height="fill_parent"
+        android:layout_width="15dp"
+        android:background="@color/HotPink"
+        />
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/selectable_background_cardbank"
+        android:gravity="center_vertical"
+        android:padding="8dp">
+
+        <ImageView
+            android:id="@+id/guideimage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:src="@drawable/card_guide_arrow" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="8dp"
+            android:layout_toRightOf="@+id/guideimage"
+            android:orientation="vertical">
+
+            <TextView
+                style="@android:style/TextAppearance.Holo.Medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:text="@string/card_guide_string_title" />
+
+            <TextView
+                android:id="@+id/guidetext"
+                style="@android:style/TextAppearance.Holo.Small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:text="@string/card_guide_string_body" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>

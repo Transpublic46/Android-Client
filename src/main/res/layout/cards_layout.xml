@@ -1,0 +1,54 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    >
+
+    <se.poochoo.cardsui.views.CardUI
+        android:id="@+id/cardsview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+
+    <RelativeLayout
+        android:id="@+id/undoButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
+        android:background="#50000000"
+        android:onClick="undoAction"
+        android:padding="5dp"
+        android:visibility="gone"
+        >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/button_undo"
+            android:layout_centerVertical="true"
+            android:id="@+id/demotedButtonImage" />
+
+
+        <TextView
+            android:id="@+id/demotedButtonText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/demotedButtonText"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/demotedButtonImage" />
+
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/actionBarDivider"
+        android:layout_alignParentTop="true"
+        android:layout_width="fill_parent"
+        android:layout_height="3dp"
+        android:background="@anim/loadinganimation"
+
+        />
+
+</RelativeLayout>
