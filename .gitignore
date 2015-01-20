@@ -24,3 +24,8 @@ proguard/
 
 # Log Files
 *.log
+
+# Manually added
+.idea/
+*.iml
+manifest-merger-release-report.txt

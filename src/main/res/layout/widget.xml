@@ -1,0 +1,33 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:id="@+id/entireWidget"
+    android:orientation="vertical"
+    >
+
+    <ListView
+        android:id="@+id/widgetList"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        />
+    <ImageButton
+        android:id="@+id/widgetUpdate"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_gravity="center_horizontal"
+        android:background="#90000000"
+        android:src="@drawable/action_refresh"/>
+    <RelativeLayout
+        android:id="@+id/widgetLoading"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_gravity="center_horizontal"
+        android:background="#90000000"
+        android:visibility="gone"
+        >
+        <ProgressBar android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            />
+    </RelativeLayout>
+</RelativeLayout>

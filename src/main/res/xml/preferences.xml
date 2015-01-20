@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <Preference android:title="@string/clearFavorites"
+        android:summary="@string/clearFavoritesSummary"
+        android:key="clearFavorites"></Preference>
+    <Preference android:title="@string/clearRemoved"
+        android:summary="@string/clearRemovedSummary"
+        android:key="clearRemoved"></Preference>
+
+    <!-- these below are temporary debug settings built to make it easier to test stuff -->
+
+    <CheckBoxPreference
+        android:key="preference_debug"
+        android:title="@string/preference_debug_title"
+        android:summary="@string/preference_debug_summary"
+        android:defaultValue="false" />
+
+    <EditTextPreference
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:defaultValue="0.01"
+        android:inputType="numberDecimal"
+        android:key="swipe_factor"
+        android:maxLength="4"
+        android:title="ALPHA ONLY Swipiness"
+        android:summary="How easy it is to swipe a card away, lower value = harder" />
+</PreferenceScreen>

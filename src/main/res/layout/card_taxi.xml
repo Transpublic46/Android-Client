@@ -1,0 +1,41 @@
+<LinearLayout
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:svgimageview="http://schemas.android.com/apk/res-auto" >
+
+    <View
+        android:id="@+id/taxiecolor"
+        android:layout_height="fill_parent"
+        android:layout_width="15dp"
+        android:background="@color/yellow"
+        />
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/selectable_background_cardbank"
+            android:gravity="center_vertical"
+            android:padding="8dp">
+
+            <com.caverock.androidsvg.SVGImageView
+                android:id="@+id/taxiimage"
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                svgimageview:svg="@drawable/icon_transportation_taxi"/>
+
+            <TextView
+                android:id="@+id/taxitext"
+                style="@android:style/TextAppearance.Holo.Medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/taxiimage"
+                android:layout_marginLeft="8dp"
+                android:text="@string/cabCardText" />
+
+    </RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:oneshot="false">
+
+    <item android:drawable="@drawable/loadinganimationframe0_repeating" android:duration="25" />
+
+    <item android:drawable="@drawable/loadinganimationframe1_repeating" android:duration="25" />
+    <item android:drawable="@drawable/loadinganimationframe2_repeating" android:duration="25" />
+    <item android:drawable="@drawable/loadinganimationframe3_repeating" android:duration="25" />
+
+    <item android:drawable="@drawable/loadinganimationframe4_repeating" android:duration="25" />
+    <item android:drawable="@drawable/loadinganimationframe5_repeating" android:duration="25" />
+    <item android:drawable="@drawable/loadinganimationframe6_repeating" android:duration="25" />
+
+    <item android:drawable="@drawable/loadinganimationframe7_repeating" android:duration="25" />
+    <item android:drawable="@drawable/loadinganimationframe8_repeating" android:duration="25" />
+    <item android:drawable="@drawable/loadinganimationframe9_repeating" android:duration="25" />
+
+    <item android:drawable="@drawable/loadinganimationframe10_repeating" android:duration="25" />
+    <item android:drawable="@drawable/loadinganimationframe11_repeating" android:duration="25" />
+    <item android:drawable="@drawable/loadinganimationframe12_repeating" android:duration="25" />
+
+    <item android:drawable="@drawable/loadinganimationframe13_repeating" android:duration="25" />
+    <item android:drawable="@drawable/loadinganimationframe14_repeating" android:duration="25" />
+    <item android:drawable="@drawable/loadinganimationframe15_repeating" android:duration="25" />
+
+</animation-list>

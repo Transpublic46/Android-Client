@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array translatable="false" name="preference_language_entries">
+        <item >English</item>
+        <item >Svenska</item>
+    </string-array>
+
+    <string-array translatable="false" name="preference_language_values">
+        <item >english</item>
+        <item >svenska</item>
+    </string-array>
+
+
+</resources>

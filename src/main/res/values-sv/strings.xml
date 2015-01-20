@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">SL Appen</string>
+    <string name="yes">Ja</string>
+    <string name="no">Nej</string>
+
+    <string name="action_search">Sök</string>
+    <string name="action_settings">Inställningar</string>
+    <string name="action_about">Om</string>
+    <string name="action_help">Hjälp</string>
+    <string name="action_share">Dela app</string>
+    <string name="action_community">Community</string>
+    <string name="action_beta">Beta feedback</string>
+    <string name="action_refresh">Uppdatera</string>
+
+    <string name="preference_debug_title">ALPHA ONLY Debug</string>
+    <string name="preference_debug_summary">Activate debug to see statistics.</string>
+
+    <string name="preference_language_title">Språk</string>
+    <string name="preference_language_dialog_title">Välj språk</string>
+    <string name="preference_language_summary">Vilket språk vill du använda?</string>
+    <string name="preference_language_default">Engelska</string>
+
+    <string name="menu_settings">Inställningar</string>
+    <string name="title_main_activity">SL Avgangstavla</string>
+    <string name="image">Image thumbnail</string>
+    <string name="title">Titel</string>
+
+    <string name="tickerAboutToDepart">Avgår strax</string>
+    <string name="tickerDepartured">Avgått</string>
+
+    <string name="title_activity_main">CardsUI</string>
+    <string name="desc">Beskrivning</string>
+    <string name="overflow">Menu Overflow</string>
+    <string name="color_stripe">Färg</string>
+
+    <string name="timehelptext">" "</string>
+
+    <string name="betaDialogTitle">Beta app feedback</string>
+    <string name="betaDialogTextView">Beskriv ditt problem. Vi lägger automatiskt till teknisk information. Vi samlar inte information som används för att identifiera dig, men din aktuella position kommer att skickas med.</string>
+    <string name="betaDialogEditTextGot">Vilken information vill du inte ha just nu?</string>
+    <string name="betaDialogEditTextWanted">Vilken information vill du ha istället?</string>
+    <string name="betaDialogButtonLeft">Avbryt</string>
+    <string name="betaDialogButtonRight">Skicka</string>
+
+    <string name="departureDialogButtonLeft">App</string>
+    <string name="is_realtime">Realtid</string>
+    <string name="not_realtime">Ej realtid</string>
+
+    <string name="demotedButtonText">Borta! Ångra?</string>
+
+    <string name="shareMessage">Hej! Jag är påväg mot %1$s som avgår %2$s från %3$s enligt SL Appen, http://bit.ly/sl-appen</string>
+    <string name="shareApp">"Jag testar Sl Appen för Android och det kan du med! Besök http://bit.ly/sl-appen för att komma igång."</string>
+
+    <string name="errorTextNotConnected">Vi kunde inte ansluta till Internet. Kontrollera din anslutning och försök igen.</string>
+    <string name="errorTextEmptyResponseNoPosition">Vi kunde inte avläsa din position. Kontrollera dina inställningar och försök igen.</string>
+    <string name="errorTextEmptyResponseNoDepartures">Vi kunde inte hitta några avgångar baserat på din plats, tid eller sökning. Försök igen senare.</string>
+    <string name="errorTextTimeout">Ajdå! Verkar som att vi har problem att prata med servern just nu. Försök igen senare.</string>
+    <string name="errorTextDefault">Pinsamt! Ett oväntat problem uppstod. Var god försök igen.</string>
+
+    <string name="privacyPolicyTitle">Integritetspolicy</string>
+    <string name="privacyPolicyText">Läs vår integritetspolicy för att få reda på hur vi använder data från din enhet.</string>
+    <string name="privacyPolicyButton">Integritetspolicy version 1</string>
+    <string name="privacyPolicyUrl">https://docs.google.com/document/d/1nFk8jMsLN-EIo6KHZKQk6eeyhaABoEtROgEYdGyD08A</string>
+
+    <string name="clearFavorites">Glöm favoriter</string>
+    <string name="clearFavoritesSummary">Töm minnet för avgångar du har favoritmarkerat</string>
+    <string name="clearFavoritesCleared">Dina favoriter är nu bortglömda!</string>
+    <string name="clearRemoved">Glöm borttagna avgångar</string>
+    <string name="clearRemovedSummary">Töm minnet för avgångar du har svept bort</string>
+    <string name="clearRemovedCleared">Glömde bort vad du tagit bort!</string>
+
+    <string name="cabCardText">Ring en taxi från Taxi Stockholm</string>
+    <string name="cabCardTextConfirm">Säkert på att du vill ringa en Taxi?</string>
+    <string name="cabCardTextConfirmLocation">Du befinner dig på %1$s</string>
+
+    <string name="card_guide_string_title">Svep bort mig!</string>
+    <string name="card_guide_string_body">Svep bort kort du inte är intresserad av. Prova genom att svepa bort mig!</string>
+
+    <string name="proximityTimeToLeave">Gå nu för att hinna</string>
+    <string name="proximityRunForIt">Du hinner kanske om du springer</string>
+    <string name="proximityImpossible">Du kommer att missa den</string>
+    <string name="proximityRelax">Du kan vänta lite längre</string>
+
+    <string name="trackingEnabled">Skapade en notis för avgången</string>
+    <string name="trackingError">Det finns redan en notis för denna avång!</string>
+</resources>
