@@ -3,28 +3,31 @@ package se.poochoo.reminder;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
-import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.media.RingtoneManager;
 import android.net.Uri;
-import android.provider.ContactsContract;
-
-import com.google.android.gms.internal.di;
+import android.util.SparseIntArray;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Timer;
 
 import se.poochoo.DialogActivity;
 import se.poochoo.R;
+import se.poochoo.RowItem;
 import se.poochoo.cardsui.CardTicker;
 import se.poochoo.proto.Messages;
 
-/**
- * Created by Erik on 2013-12-08.
- */
 public class ReminderHelper {
+
+    static final long UPDATE_NOTIFICATION_INTERVAL = 30000;
+    static final long UPDATE_NOTIFICATION_DELAY = 100;
+    private static final int SECONDS_PER_MINUTE = 60;
+    private static final int TIMER_OUT_OF_SCOPE_MIN = 45;
+    private static final int TIMER_THIRTY_MIN = 30;
+    private static final int TIMER_TWENTY_MIN = 20;
+    private static final int TIMER_FIFTEEN_MIN = 15;
+    private static final int TIMER_TEN_MIN = 10;
 
     public static final Map<Messages.ListItem.ProximityAssessment, Integer> PROXIMITY_MESSAGES =
             new HashMap<Messages.ListItem.ProximityAssessment, Integer>();
@@ -35,13 +38,43 @@ public class ReminderHelper {
         PROXIMITY_MESSAGES.put(Messages.ListItem.ProximityAssessment.STAY_PUT, R.string.proximityRelax);
     }
 
-    static final long UPDATE_NOTIFICATION_INTERVAL = 30000;
-    static final long UPDATE_NOTIFICATION_DELAY = 100;
+    private static final SparseIntArray countdownIconMap = new SparseIntArray(14);
+    static {
+        countdownIconMap.put(0, R.drawable.icon_countdown_zero);
+        countdownIconMap.put(1, R.drawable.icon_countdown_one);
+        countdownIconMap.put(2, R.drawable.icon_countdown_two);
+        countdownIconMap.put(3, R.drawable.icon_countdown_three);
+        countdownIconMap.put(4, R.drawable.icon_countdown_four);
+        countdownIconMap.put(5, R.drawable.icon_countdown_five);
+        countdownIconMap.put(6, R.drawable.icon_countdown_six);
+        countdownIconMap.put(7, R.drawable.icon_countdown_seven);
+        countdownIconMap.put(8, R.drawable.icon_countdown_eight);
+        countdownIconMap.put(9, R.drawable.icon_countdown_nine);
+        countdownIconMap.put(TIMER_TEN_MIN, R.drawable.icon_countdown_ten);
+        countdownIconMap.put(TIMER_FIFTEEN_MIN, R.drawable.icon_countdown_fifteen);
+        countdownIconMap.put(TIMER_TWENTY_MIN, R.drawable.icon_countdown_twenty);
+        countdownIconMap.put(TIMER_THIRTY_MIN, R.drawable.icon_countdown_thirty);
+    }
 
-    private static String buildTitle(Context context, Messages.ListItem listItem) {
-        String departureTime = buildTickedDepartureTime(
-                context, listItem.getDepartureTime(), listItem.getSecondsLeft());
-        return departureTime + " " + listItem.getDepartureName();
+    private static String buildTitle(Messages.ListItem listItem) {
+        return listItem.getStopName() + " → " + listItem.getDepartureName();
+    }
+
+    private static int getSmallIcon(Messages.ListItem listItem){
+        int minLeft = listItem.getSecondsLeft()/SECONDS_PER_MINUTE;
+        if (minLeft > TIMER_OUT_OF_SCOPE_MIN) {
+            return RowItem.TRAFFIC_TYPE_TO_ICON_SMALL_WHITE.get(listItem.getTrafficType());
+        } else if (minLeft >= TIMER_THIRTY_MIN){
+            return countdownIconMap.get(TIMER_THIRTY_MIN);
+        } else if (minLeft >= TIMER_TWENTY_MIN) {
+            return countdownIconMap.get(TIMER_TWENTY_MIN);
+        } else if (minLeft >= TIMER_FIFTEEN_MIN) {
+            return countdownIconMap.get(TIMER_FIFTEEN_MIN);
+        } else if (minLeft >= TIMER_TEN_MIN) {
+            return countdownIconMap.get(TIMER_TEN_MIN);
+        } else {
+            return countdownIconMap.get(minLeft);
+        }
     }
 
     private static String buildErrorTitle(Messages.ListItem listItem) {
@@ -53,13 +86,14 @@ public class ReminderHelper {
     }
 
     private static String buildTextContent(Context context, Messages.ListItem listItem) {
+        String departureTime = buildTickedDepartureTime(context, listItem.getDepartureTime(), listItem.getSecondsLeft());
         if (listItem.hasProximityAssessment()) {
             Integer actionMessage = PROXIMITY_MESSAGES.get(listItem.getProximityAssessment());
             if (actionMessage != null) {
-                return listItem.getStopName() + " - " + context.getString(actionMessage);
+                return departureTime + " " + context.getString(actionMessage);
             }
         }
-        return listItem.getStopName();
+        return departureTime;
     }
 
     private static String buildTickedDepartureTime(Context context, String currentDepartureText, int secondsLeft) {
@@ -68,7 +102,7 @@ public class ReminderHelper {
         } else if (secondsLeft <= CardTicker.SECONDS_ABOUT_TO_DEPART) {
             return context.getString(R.string.tickerAboutToDepart);
         } else if (currentDepartureText.contains(" ")) {
-            int newMinutes = secondsLeft / 60;
+            int newMinutes = secondsLeft / SECONDS_PER_MINUTE;
             String newDepartureTime = currentDepartureText.substring(currentDepartureText.indexOf(" "));
             return newMinutes + newDepartureTime;
         }
@@ -99,16 +133,15 @@ public class ReminderHelper {
             Messages.DataSelector selector,
             boolean showActionMessage) {
         Messages.ListItem displayItem = listDataItem.getDisplayItem();
-        String title = buildTitle(context, displayItem);
+        String title = buildTitle(displayItem);
         String textContent = buildTextContent(context, displayItem);
+        int icon = getSmallIcon(displayItem);
 
         NotificationManager mNotificationManager = (NotificationManager)context.getSystemService(
                 Context.NOTIFICATION_SERVICE);
         Intent intent = new Intent(context, DialogActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
         intent.putExtra(DialogActivity.SMART_LIST_DATA_EXTRA, listDataItem.toByteArray());
-
-        int icon = displayItem.getRealtime() ? R.drawable.icon_realtime_on : R.drawable.icon_realtime_off;
 
         PendingIntent contentIntent = PendingIntent.getActivity(
                 context, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT | Notification.FLAG_ONGOING_EVENT);
