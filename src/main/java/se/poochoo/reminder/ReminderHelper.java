@@ -7,6 +7,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.media.RingtoneManager;
 import android.net.Uri;
+import android.os.Build;
 import android.util.SparseIntArray;
 
 import java.util.HashMap;
@@ -151,6 +152,9 @@ public class ReminderHelper {
                 .setDeleteIntent(cancelIntent(context, selector))
                 .setContentIntent(contentIntent)
                 .setContentText(textContent);
+        if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1){
+            not.setShowWhen(false);
+        }
         if (showActionMessage && displayItem.hasProximityAssessment()) {
             Integer actionMessage = PROXIMITY_MESSAGES.get(listDataItem.getDisplayItem().getProximityAssessment());
             if (actionMessage != null) {
