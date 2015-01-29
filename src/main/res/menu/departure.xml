@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-
     <item
         android:id="@+id/action_star"
         android:orderInCategory="300"
         android:showAsAction="always"
         android:checkable="true"
-        android:title="Star departure"
-        />
-
+        android:title="Star departure" />
+    <item
+        android:id="@+id/action_notification"
+        android:orderInCategory="200"
+        android:showAsAction="always"
+        android:checkable="true"
+        android:title="Notify departure" />
 </menu>

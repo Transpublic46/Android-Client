@@ -55,6 +55,7 @@ public class DialogActivity extends Activity implements NetworkInterface.Respons
     public int dialogDepartureColor;
     private long dataLoadedAt;
     private MenuItem starDepartureItem;
+    private MenuItem notifyDepartureItem;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -68,12 +69,9 @@ public class DialogActivity extends Activity implements NetworkInterface.Respons
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.departure, menu);
-
         starDepartureItem = menu.findItem(R.id.action_star);
-
         if (selectedData.isPromoted(listDataItem.getSelector())){
             starDepartureItem.setChecked(true);
             starDepartureItem.setIcon(R.drawable.icon_star_white_on);
@@ -81,7 +79,9 @@ public class DialogActivity extends Activity implements NetworkInterface.Respons
             starDepartureItem.setChecked(false);
             starDepartureItem.setIcon(R.drawable.icon_star_white_off);
         }
-
+        notifyDepartureItem = menu.findItem(R.id.action_notification);
+        notifyDepartureItem.setChecked(true);
+        notifyDepartureItem.setIcon(R.drawable.action_remind);
         return super.onCreateOptionsMenu(menu);
     }
 
@@ -98,6 +98,9 @@ public class DialogActivity extends Activity implements NetworkInterface.Respons
                     item.setIcon(R.drawable.icon_star_white_on);
                     selectedData.storeAction(listDataItem.getSelector(), SelectionUserDataSource.SelectionType.PROMOTE);
                 }
+                break;
+            case R.id.action_notification:
+                showTrackingNotification(0);
                 break;
         }
         return super.onOptionsItemSelected(item);
