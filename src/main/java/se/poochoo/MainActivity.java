@@ -1,30 +1,23 @@
 package se.poochoo;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
 import android.app.Activity;
+import android.app.SearchManager;
 import android.content.ActivityNotFoundException;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.PorterDuff;
-import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.preference.PreferenceManager;
-import android.util.Log;
+import android.provider.SearchRecentSuggestions;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.MotionEvent;
 import android.view.View;
-import android.view.animation.Animation;
-import android.view.animation.ScaleAnimation;
+import android.view.inputmethod.EditorInfo;
 import android.widget.ListView;
 import android.widget.SearchView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import se.poochoo.cardsui.views.CardUI;
@@ -36,6 +29,7 @@ import se.poochoo.net.NetworkInterface;
 import se.poochoo.proto.Messages;
 import se.poochoo.proto.Messages.DataSelector;
 import se.poochoo.proto.Messages.SmartRequest;
+import se.poochoo.search.CustomSuggestionProvider;
 
 public class MainActivity extends Activity implements CardHelper.RequestProvider, LocationHelper.LocationCallBack {
     private final int SEARCH_QUERY_TYPE_DELAY = 700; // Milliseconds to wait before searching.
@@ -70,13 +64,32 @@ public class MainActivity extends Activity implements CardHelper.RequestProvider
         //pull-down-to-refresh listener and action
         mListView = (QuickReturnListView) findViewById(R.id.listView);
         pullDownToRefreshFunction();
+
+        //Search
+        handleIntent(getIntent());
+    }
+
+    @Override
+    protected void onNewIntent(Intent intent) {
+        handleIntent(intent);
+        super.onNewIntent(intent);
+    }
+
+    private void handleIntent(Intent intent){
+        if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
+            String query = intent.getStringExtra(SearchManager.QUERY);
+            currentSearchQuery = query;
+            cardHelper.loadDataFromServer();
+            SearchRecentSuggestions suggestions = new SearchRecentSuggestions(this,
+                    CustomSuggestionProvider.AUTHORITY, CustomSuggestionProvider.MODE);
+            suggestions.saveRecentQuery(query, null);
+        }
     }
 
     @Override
     public void onStart() {
         super.onStart();
         locationHelper.connect();
-
     }
 
     @Override
@@ -122,68 +135,25 @@ public class MainActivity extends Activity implements CardHelper.RequestProvider
             }
         });
     }
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.main, menu);
-
-        final MenuItem refreshItem = menu.findItem(R.id.action_refresh);
-        final MenuItem betaItem = menu.findItem(R.id.action_beta);
-
-        MenuItem searchViewItem = menu.findItem(R.id.action_search);
-        SearchView searchView = (SearchView) searchViewItem.getActionView();
-        searchView.setQueryHint("Station name?");
-        searchView.setIconifiedByDefault(true);
-
-        final SearchView.OnQueryTextListener queryTextListener = new SearchView.OnQueryTextListener() {
+        SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
+        SearchView searchView = (SearchView) menu.findItem(R.id.action_search).getActionView();
+        searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
+        searchView.setQueryRefinementEnabled(true);
+        searchView.setQueryHint(getString(R.string.LABEL_SEARCH_STATION));
+        searchView.setImeOptions(EditorInfo.IME_ACTION_SEARCH | EditorInfo.IME_FLAG_NO_EXTRACT_UI);
+        searchView.setOnCloseListener(new SearchView.OnCloseListener() {
             @Override
-            public boolean onQueryTextChange(String newText) {
-                if (currentSearchQuery != null && newText.length() < currentSearchQuery.length()) {
-                    // User is removing characters.
-                    cardHelper.clearCards();
-                } else if (newText.length() >= SEARCH_MIN_QUERY_LENGTH) {
-                    // User is typing new characters, schedule search with some delay.
-                    nextAllowedSearch = System.currentTimeMillis() + SEARCH_QUERY_TYPE_DELAY;
-                    lastPerformedSearch = null;
-                    preformSearchLater();
-                } else if (newText.length() < SEARCH_MIN_QUERY_LENGTH){
-                    // User needs to type more characters to continue.
-                    cardHelper.clearCards();
-                }
-                currentSearchQuery = newText;
-                return true;
-            }
-
-            @Override
-            public boolean onQueryTextSubmit(String query) {
-                if (query.length() >= SEARCH_MIN_QUERY_LENGTH) {
-                    currentSearchQuery = query;
-                    cardHelper.loadDataFromServer();
-                } else {
-                    cardHelper.clearCards();
-                    currentSearchQuery = null;
-                }
-                return true;
-            }
-        };
-        searchView.setOnQueryTextListener(queryTextListener);
-
-        searchView.setOnQueryTextFocusChangeListener(new View.OnFocusChangeListener() {
-            @Override
-            public void onFocusChange(View view, boolean queryTextFocused) {
-                if(!queryTextFocused) {
-                    //The searchview was closed, act accordingly
-                    //update so that the list isn't empty
-                    cardHelper.clearCards();
-                    cardHelper.loadDataFromServer();
-                } else {
-                    //The searchview was opened, act accordingly
-                }
+            public boolean onClose() {
+                currentSearchQuery = "";
+                cardHelper.loadDataFromServer();
+                return false;
             }
         });
-
-        return super.onCreateOptionsMenu(menu);
+        return true;
     }
 
     @Override
@@ -196,8 +166,6 @@ public class MainActivity extends Activity implements CardHelper.RequestProvider
                 cardHelper.clearCards();
                 cardHelper.loadDataFromServer();
                 break;
-            case R.id.action_search:
-                break;
             case R.id.action_settings:
                 startActivity(new Intent(this, SettingsActivity.class));
                 break;
@@ -205,7 +173,6 @@ public class MainActivity extends Activity implements CardHelper.RequestProvider
                 Intent aboutintent = new Intent(this, AboutActivity.class);
                 startActivity(aboutintent);
                 break;
-
             case R.id.action_help:
                 try{
                     Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(youtubeVideo));

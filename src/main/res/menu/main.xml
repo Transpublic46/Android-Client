@@ -11,9 +11,8 @@
         android:id="@+id/action_search"
         android:orderInCategory="100"
         android:showAsAction="always"
-        android:icon="@drawable/action_search"
-        android:actionViewClass="android.widget.SearchView"
         android:title="@string/action_search"
+        android:actionViewClass="android.widget.SearchView"
         />
     <item
         android:id="@+id/action_refresh"
@@ -51,4 +50,4 @@
         android:showAsAction="never"
         />
 
-</menu> 
+</menu>

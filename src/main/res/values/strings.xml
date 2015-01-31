@@ -86,4 +86,5 @@
 
     <string name="trackingEnabled">Created a tracking notification</string>
     <string name="trackingError">Departure already tracked!</string>
+    <string name="LABEL_SEARCH_STATION">Station?</string>
 </resources>

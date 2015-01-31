@@ -85,4 +85,5 @@
 
     <string name="trackingEnabled">Skapade en notis för avgången</string>
     <string name="trackingError">Det finns redan en notis för denna avång!</string>
+    <string name="LABEL_SEARCH_STATION">Station?</string>
 </resources>

@@ -85,4 +85,5 @@
 
     <string name="trackingEnabled">Eine Notification wurde erstellt</string>
     <string name="trackingError">Es gibt schon eine Notification für dieser Abfahrt!</string>
+    <string name="LABEL_SEARCH_STATION">Station?</string>
 </resources>
