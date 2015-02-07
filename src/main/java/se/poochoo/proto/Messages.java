@@ -1098,6 +1098,715 @@ public final class Messages {
     // @@protoc_insertion_point(class_scope:poochoo.DataSelector)
   }
   
+  public interface StopInformationOrBuilder
+      extends com.google.protobuf.MessageOrBuilder {
+    
+    // optional int64 sid = 1;
+    boolean hasSid();
+    long getSid();
+    
+    // optional string shortName = 2;
+    boolean hasShortName();
+    String getShortName();
+    
+    // optional string longtName = 3;
+    boolean hasLongtName();
+    String getLongtName();
+    
+    // optional double lat = 4;
+    boolean hasLat();
+    double getLat();
+    
+    // optional double lng = 5;
+    boolean hasLng();
+    double getLng();
+  }
+  public static final class StopInformation extends
+      com.google.protobuf.GeneratedMessage
+      implements StopInformationOrBuilder {
+    // Use StopInformation.newBuilder() to construct.
+    private StopInformation(Builder builder) {
+      super(builder);
+    }
+    private StopInformation(boolean noInit) {}
+    
+    private static final StopInformation defaultInstance;
+    public static StopInformation getDefaultInstance() {
+      return defaultInstance;
+    }
+    
+    public StopInformation getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+    
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return se.poochoo.proto.Messages.internal_static_poochoo_StopInformation_descriptor;
+    }
+    
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return se.poochoo.proto.Messages.internal_static_poochoo_StopInformation_fieldAccessorTable;
+    }
+    
+    private int bitField0_;
+    // optional int64 sid = 1;
+    public static final int SID_FIELD_NUMBER = 1;
+    private long sid_;
+    public boolean hasSid() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    public long getSid() {
+      return sid_;
+    }
+    
+    // optional string shortName = 2;
+    public static final int SHORTNAME_FIELD_NUMBER = 2;
+    private java.lang.Object shortName_;
+    public boolean hasShortName() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    public String getShortName() {
+      java.lang.Object ref = shortName_;
+      if (ref instanceof String) {
+        return (String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
+          shortName_ = s;
+        }
+        return s;
+      }
+    }
+    private com.google.protobuf.ByteString getShortNameBytes() {
+      java.lang.Object ref = shortName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+        shortName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    
+    // optional string longtName = 3;
+    public static final int LONGTNAME_FIELD_NUMBER = 3;
+    private java.lang.Object longtName_;
+    public boolean hasLongtName() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    public String getLongtName() {
+      java.lang.Object ref = longtName_;
+      if (ref instanceof String) {
+        return (String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
+          longtName_ = s;
+        }
+        return s;
+      }
+    }
+    private com.google.protobuf.ByteString getLongtNameBytes() {
+      java.lang.Object ref = longtName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+        longtName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    
+    // optional double lat = 4;
+    public static final int LAT_FIELD_NUMBER = 4;
+    private double lat_;
+    public boolean hasLat() {
+      return ((bitField0_ & 0x00000008) == 0x00000008);
+    }
+    public double getLat() {
+      return lat_;
+    }
+    
+    // optional double lng = 5;
+    public static final int LNG_FIELD_NUMBER = 5;
+    private double lng_;
+    public boolean hasLng() {
+      return ((bitField0_ & 0x00000010) == 0x00000010);
+    }
+    public double getLng() {
+      return lng_;
+    }
+    
+    private void initFields() {
+      sid_ = 0L;
+      shortName_ = "";
+      longtName_ = "";
+      lat_ = 0D;
+      lng_ = 0D;
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+      
+      memoizedIsInitialized = 1;
+      return true;
+    }
+    
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeInt64(1, sid_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeBytes(2, getShortNameBytes());
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeBytes(3, getLongtNameBytes());
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        output.writeDouble(4, lat_);
+      }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        output.writeDouble(5, lng_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+    
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+    
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(1, sid_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(2, getShortNameBytes());
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(3, getLongtNameBytes());
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeDoubleSize(4, lat_);
+      }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeDoubleSize(5, lng_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+    
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+    
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof se.poochoo.proto.Messages.StopInformation)) {
+        return super.equals(obj);
+      }
+      se.poochoo.proto.Messages.StopInformation other = (se.poochoo.proto.Messages.StopInformation) obj;
+      
+      boolean result = true;
+      result = result && (hasSid() == other.hasSid());
+      if (hasSid()) {
+        result = result && (getSid()
+            == other.getSid());
+      }
+      result = result && (hasShortName() == other.hasShortName());
+      if (hasShortName()) {
+        result = result && getShortName()
+            .equals(other.getShortName());
+      }
+      result = result && (hasLongtName() == other.hasLongtName());
+      if (hasLongtName()) {
+        result = result && getLongtName()
+            .equals(other.getLongtName());
+      }
+      result = result && (hasLat() == other.hasLat());
+      if (hasLat()) {
+        result = result && (Double.doubleToLongBits(getLat())    == Double.doubleToLongBits(other.getLat()));
+      }
+      result = result && (hasLng() == other.hasLng());
+      if (hasLng()) {
+        result = result && (Double.doubleToLongBits(getLng())    == Double.doubleToLongBits(other.getLng()));
+      }
+      result = result &&
+          getUnknownFields().equals(other.getUnknownFields());
+      return result;
+    }
+    
+    @java.lang.Override
+    public int hashCode() {
+      int hash = 41;
+      hash = (19 * hash) + getDescriptorForType().hashCode();
+      if (hasSid()) {
+        hash = (37 * hash) + SID_FIELD_NUMBER;
+        hash = (53 * hash) + hashLong(getSid());
+      }
+      if (hasShortName()) {
+        hash = (37 * hash) + SHORTNAME_FIELD_NUMBER;
+        hash = (53 * hash) + getShortName().hashCode();
+      }
+      if (hasLongtName()) {
+        hash = (37 * hash) + LONGTNAME_FIELD_NUMBER;
+        hash = (53 * hash) + getLongtName().hashCode();
+      }
+      if (hasLat()) {
+        hash = (37 * hash) + LAT_FIELD_NUMBER;
+        hash = (53 * hash) + hashLong(
+            Double.doubleToLongBits(getLat()));
+      }
+      if (hasLng()) {
+        hash = (37 * hash) + LNG_FIELD_NUMBER;
+        hash = (53 * hash) + hashLong(
+            Double.doubleToLongBits(getLng()));
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      return hash;
+    }
+    
+    public static se.poochoo.proto.Messages.StopInformation parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data).buildParsed();
+    }
+    public static se.poochoo.proto.Messages.StopInformation parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
+    }
+    public static se.poochoo.proto.Messages.StopInformation parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data).buildParsed();
+    }
+    public static se.poochoo.proto.Messages.StopInformation parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
+    }
+    public static se.poochoo.proto.Messages.StopInformation parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input).buildParsed();
+    }
+    public static se.poochoo.proto.Messages.StopInformation parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
+    }
+    public static se.poochoo.proto.Messages.StopInformation parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
+    }
+    public static se.poochoo.proto.Messages.StopInformation parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
+    }
+    public static se.poochoo.proto.Messages.StopInformation parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input).buildParsed();
+    }
+    public static se.poochoo.proto.Messages.StopInformation parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
+    }
+    
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(se.poochoo.proto.Messages.StopInformation prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+    
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder>
+       implements se.poochoo.proto.Messages.StopInformationOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return se.poochoo.proto.Messages.internal_static_poochoo_StopInformation_descriptor;
+      }
+      
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return se.poochoo.proto.Messages.internal_static_poochoo_StopInformation_fieldAccessorTable;
+      }
+      
+      // Construct using se.poochoo.proto.Messages.StopInformation.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+      
+      private Builder(BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+      
+      public Builder clear() {
+        super.clear();
+        sid_ = 0L;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        shortName_ = "";
+        bitField0_ = (bitField0_ & ~0x00000002);
+        longtName_ = "";
+        bitField0_ = (bitField0_ & ~0x00000004);
+        lat_ = 0D;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        lng_ = 0D;
+        bitField0_ = (bitField0_ & ~0x00000010);
+        return this;
+      }
+      
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+      
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return se.poochoo.proto.Messages.StopInformation.getDescriptor();
+      }
+      
+      public se.poochoo.proto.Messages.StopInformation getDefaultInstanceForType() {
+        return se.poochoo.proto.Messages.StopInformation.getDefaultInstance();
+      }
+      
+      public se.poochoo.proto.Messages.StopInformation build() {
+        se.poochoo.proto.Messages.StopInformation result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+      
+      private se.poochoo.proto.Messages.StopInformation buildParsed()
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        se.poochoo.proto.Messages.StopInformation result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(
+            result).asInvalidProtocolBufferException();
+        }
+        return result;
+      }
+      
+      public se.poochoo.proto.Messages.StopInformation buildPartial() {
+        se.poochoo.proto.Messages.StopInformation result = new se.poochoo.proto.Messages.StopInformation(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.sid_ = sid_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.shortName_ = shortName_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.longtName_ = longtName_;
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000008;
+        }
+        result.lat_ = lat_;
+        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
+          to_bitField0_ |= 0x00000010;
+        }
+        result.lng_ = lng_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+      
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof se.poochoo.proto.Messages.StopInformation) {
+          return mergeFrom((se.poochoo.proto.Messages.StopInformation)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+      
+      public Builder mergeFrom(se.poochoo.proto.Messages.StopInformation other) {
+        if (other == se.poochoo.proto.Messages.StopInformation.getDefaultInstance()) return this;
+        if (other.hasSid()) {
+          setSid(other.getSid());
+        }
+        if (other.hasShortName()) {
+          setShortName(other.getShortName());
+        }
+        if (other.hasLongtName()) {
+          setLongtName(other.getLongtName());
+        }
+        if (other.hasLat()) {
+          setLat(other.getLat());
+        }
+        if (other.hasLng()) {
+          setLng(other.getLng());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+      
+      public final boolean isInitialized() {
+        return true;
+      }
+      
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder(
+            this.getUnknownFields());
+        while (true) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              this.setUnknownFields(unknownFields.build());
+              onChanged();
+              return this;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                this.setUnknownFields(unknownFields.build());
+                onChanged();
+                return this;
+              }
+              break;
+            }
+            case 8: {
+              bitField0_ |= 0x00000001;
+              sid_ = input.readInt64();
+              break;
+            }
+            case 18: {
+              bitField0_ |= 0x00000002;
+              shortName_ = input.readBytes();
+              break;
+            }
+            case 26: {
+              bitField0_ |= 0x00000004;
+              longtName_ = input.readBytes();
+              break;
+            }
+            case 33: {
+              bitField0_ |= 0x00000008;
+              lat_ = input.readDouble();
+              break;
+            }
+            case 41: {
+              bitField0_ |= 0x00000010;
+              lng_ = input.readDouble();
+              break;
+            }
+          }
+        }
+      }
+      
+      private int bitField0_;
+      
+      // optional int64 sid = 1;
+      private long sid_ ;
+      public boolean hasSid() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      public long getSid() {
+        return sid_;
+      }
+      public Builder setSid(long value) {
+        bitField0_ |= 0x00000001;
+        sid_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearSid() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        sid_ = 0L;
+        onChanged();
+        return this;
+      }
+      
+      // optional string shortName = 2;
+      private java.lang.Object shortName_ = "";
+      public boolean hasShortName() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      public String getShortName() {
+        java.lang.Object ref = shortName_;
+        if (!(ref instanceof String)) {
+          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
+          shortName_ = s;
+          return s;
+        } else {
+          return (String) ref;
+        }
+      }
+      public Builder setShortName(String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        shortName_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearShortName() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        shortName_ = getDefaultInstance().getShortName();
+        onChanged();
+        return this;
+      }
+      void setShortName(com.google.protobuf.ByteString value) {
+        bitField0_ |= 0x00000002;
+        shortName_ = value;
+        onChanged();
+      }
+      
+      // optional string longtName = 3;
+      private java.lang.Object longtName_ = "";
+      public boolean hasLongtName() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      public String getLongtName() {
+        java.lang.Object ref = longtName_;
+        if (!(ref instanceof String)) {
+          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
+          longtName_ = s;
+          return s;
+        } else {
+          return (String) ref;
+        }
+      }
+      public Builder setLongtName(String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000004;
+        longtName_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearLongtName() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        longtName_ = getDefaultInstance().getLongtName();
+        onChanged();
+        return this;
+      }
+      void setLongtName(com.google.protobuf.ByteString value) {
+        bitField0_ |= 0x00000004;
+        longtName_ = value;
+        onChanged();
+      }
+      
+      // optional double lat = 4;
+      private double lat_ ;
+      public boolean hasLat() {
+        return ((bitField0_ & 0x00000008) == 0x00000008);
+      }
+      public double getLat() {
+        return lat_;
+      }
+      public Builder setLat(double value) {
+        bitField0_ |= 0x00000008;
+        lat_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearLat() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        lat_ = 0D;
+        onChanged();
+        return this;
+      }
+      
+      // optional double lng = 5;
+      private double lng_ ;
+      public boolean hasLng() {
+        return ((bitField0_ & 0x00000010) == 0x00000010);
+      }
+      public double getLng() {
+        return lng_;
+      }
+      public Builder setLng(double value) {
+        bitField0_ |= 0x00000010;
+        lng_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearLng() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        lng_ = 0D;
+        onChanged();
+        return this;
+      }
+      
+      // @@protoc_insertion_point(builder_scope:poochoo.StopInformation)
+    }
+    
+    static {
+      defaultInstance = new StopInformation(true);
+      defaultInstance.initFields();
+    }
+    
+    // @@protoc_insertion_point(class_scope:poochoo.StopInformation)
+  }
+  
   public interface SelectionDeviceDataOrBuilder
       extends com.google.protobuf.MessageOrBuilder {
     
@@ -9488,6 +10197,10 @@ public final class Messages {
     // optional bool debug = 4;
     boolean hasDebug();
     boolean getDebug();
+    
+    // optional bool stopInformationOnly = 7;
+    boolean hasStopInformationOnly();
+    boolean getStopInformationOnly();
   }
   public static final class SmartRequest extends
       com.google.protobuf.GeneratedMessage
@@ -9601,6 +10314,16 @@ public final class Messages {
       return debug_;
     }
     
+    // optional bool stopInformationOnly = 7;
+    public static final int STOPINFORMATIONONLY_FIELD_NUMBER = 7;
+    private boolean stopInformationOnly_;
+    public boolean hasStopInformationOnly() {
+      return ((bitField0_ & 0x00000020) == 0x00000020);
+    }
+    public boolean getStopInformationOnly() {
+      return stopInformationOnly_;
+    }
+    
     private void initFields() {
       requestHeader_ = se.poochoo.proto.Messages.SmartRequestHeader.getDefaultInstance();
       deviceData_ = se.poochoo.proto.Messages.SelectionDeviceData.getDefaultInstance();
@@ -9608,6 +10331,7 @@ public final class Messages {
       searchQuery_ = se.poochoo.proto.Messages.SearchQuery.getDefaultInstance();
       explicitSelector_ = java.util.Collections.emptyList();
       debug_ = false;
+      stopInformationOnly_ = false;
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -9645,6 +10369,9 @@ public final class Messages {
       for (int i = 0; i < explicitSelector_.size(); i++) {
         output.writeMessage(6, explicitSelector_.get(i));
       }
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        output.writeBool(7, stopInformationOnly_);
+      }
       getUnknownFields().writeTo(output);
     }
     
@@ -9677,6 +10404,10 @@ public final class Messages {
       for (int i = 0; i < explicitSelector_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(6, explicitSelector_.get(i));
+      }
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(7, stopInformationOnly_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -9728,6 +10459,11 @@ public final class Messages {
         result = result && (getDebug()
             == other.getDebug());
       }
+      result = result && (hasStopInformationOnly() == other.hasStopInformationOnly());
+      if (hasStopInformationOnly()) {
+        result = result && (getStopInformationOnly()
+            == other.getStopInformationOnly());
+      }
       result = result &&
           getUnknownFields().equals(other.getUnknownFields());
       return result;
@@ -9760,6 +10496,10 @@ public final class Messages {
       if (hasDebug()) {
         hash = (37 * hash) + DEBUG_FIELD_NUMBER;
         hash = (53 * hash) + hashBoolean(getDebug());
+      }
+      if (hasStopInformationOnly()) {
+        hash = (37 * hash) + STOPINFORMATIONONLY_FIELD_NUMBER;
+        hash = (53 * hash) + hashBoolean(getStopInformationOnly());
       }
       hash = (29 * hash) + getUnknownFields().hashCode();
       return hash;
@@ -9914,6 +10654,8 @@ public final class Messages {
         }
         debug_ = false;
         bitField0_ = (bitField0_ & ~0x00000020);
+        stopInformationOnly_ = false;
+        bitField0_ = (bitField0_ & ~0x00000040);
         return this;
       }
       
@@ -9997,6 +10739,10 @@ public final class Messages {
           to_bitField0_ |= 0x00000010;
         }
         result.debug_ = debug_;
+        if (((from_bitField0_ & 0x00000040) == 0x00000040)) {
+          to_bitField0_ |= 0x00000020;
+        }
+        result.stopInformationOnly_ = stopInformationOnly_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -10053,6 +10799,9 @@ public final class Messages {
         }
         if (other.hasDebug()) {
           setDebug(other.getDebug());
+        }
+        if (other.hasStopInformationOnly()) {
+          setStopInformationOnly(other.getStopInformationOnly());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
@@ -10136,6 +10885,11 @@ public final class Messages {
               se.poochoo.proto.Messages.DataSelector.Builder subBuilder = se.poochoo.proto.Messages.DataSelector.newBuilder();
               input.readMessage(subBuilder, extensionRegistry);
               addExplicitSelector(subBuilder.buildPartial());
+              break;
+            }
+            case 56: {
+              bitField0_ |= 0x00000040;
+              stopInformationOnly_ = input.readBool();
               break;
             }
           }
@@ -10711,6 +11465,27 @@ public final class Messages {
         return this;
       }
       
+      // optional bool stopInformationOnly = 7;
+      private boolean stopInformationOnly_ ;
+      public boolean hasStopInformationOnly() {
+        return ((bitField0_ & 0x00000040) == 0x00000040);
+      }
+      public boolean getStopInformationOnly() {
+        return stopInformationOnly_;
+      }
+      public Builder setStopInformationOnly(boolean value) {
+        bitField0_ |= 0x00000040;
+        stopInformationOnly_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearStopInformationOnly() {
+        bitField0_ = (bitField0_ & ~0x00000040);
+        stopInformationOnly_ = false;
+        onChanged();
+        return this;
+      }
+      
       // @@protoc_insertion_point(builder_scope:poochoo.SmartRequest)
     }
     
@@ -10748,6 +11523,16 @@ public final class Messages {
     java.util.List<? extends se.poochoo.proto.Messages.StopScoreOrBuilder> 
         getStopScoreOrBuilderList();
     se.poochoo.proto.Messages.StopScoreOrBuilder getStopScoreOrBuilder(
+        int index);
+    
+    // repeated .poochoo.StopInformation stopInformation = 6;
+    java.util.List<se.poochoo.proto.Messages.StopInformation> 
+        getStopInformationList();
+    se.poochoo.proto.Messages.StopInformation getStopInformation(int index);
+    int getStopInformationCount();
+    java.util.List<? extends se.poochoo.proto.Messages.StopInformationOrBuilder> 
+        getStopInformationOrBuilderList();
+    se.poochoo.proto.Messages.StopInformationOrBuilder getStopInformationOrBuilder(
         int index);
   }
   public static final class SmartResponse extends
@@ -10834,10 +11619,32 @@ public final class Messages {
       return stopScore_.get(index);
     }
     
+    // repeated .poochoo.StopInformation stopInformation = 6;
+    public static final int STOPINFORMATION_FIELD_NUMBER = 6;
+    private java.util.List<se.poochoo.proto.Messages.StopInformation> stopInformation_;
+    public java.util.List<se.poochoo.proto.Messages.StopInformation> getStopInformationList() {
+      return stopInformation_;
+    }
+    public java.util.List<? extends se.poochoo.proto.Messages.StopInformationOrBuilder> 
+        getStopInformationOrBuilderList() {
+      return stopInformation_;
+    }
+    public int getStopInformationCount() {
+      return stopInformation_.size();
+    }
+    public se.poochoo.proto.Messages.StopInformation getStopInformation(int index) {
+      return stopInformation_.get(index);
+    }
+    public se.poochoo.proto.Messages.StopInformationOrBuilder getStopInformationOrBuilder(
+        int index) {
+      return stopInformation_.get(index);
+    }
+    
     private void initFields() {
       responseHeader_ = se.poochoo.proto.Messages.SmartResponseHeader.getDefaultInstance();
       listData_ = java.util.Collections.emptyList();
       stopScore_ = java.util.Collections.emptyList();
+      stopInformation_ = java.util.Collections.emptyList();
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -10866,6 +11673,9 @@ public final class Messages {
       for (int i = 0; i < stopScore_.size(); i++) {
         output.writeMessage(3, stopScore_.get(i));
       }
+      for (int i = 0; i < stopInformation_.size(); i++) {
+        output.writeMessage(6, stopInformation_.get(i));
+      }
       getUnknownFields().writeTo(output);
     }
     
@@ -10886,6 +11696,10 @@ public final class Messages {
       for (int i = 0; i < stopScore_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, stopScore_.get(i));
+      }
+      for (int i = 0; i < stopInformation_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(6, stopInformation_.get(i));
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -10919,6 +11733,8 @@ public final class Messages {
           .equals(other.getListDataList());
       result = result && getStopScoreList()
           .equals(other.getStopScoreList());
+      result = result && getStopInformationList()
+          .equals(other.getStopInformationList());
       result = result &&
           getUnknownFields().equals(other.getUnknownFields());
       return result;
@@ -10939,6 +11755,10 @@ public final class Messages {
       if (getStopScoreCount() > 0) {
         hash = (37 * hash) + STOPSCORE_FIELD_NUMBER;
         hash = (53 * hash) + getStopScoreList().hashCode();
+      }
+      if (getStopInformationCount() > 0) {
+        hash = (37 * hash) + STOPINFORMATION_FIELD_NUMBER;
+        hash = (53 * hash) + getStopInformationList().hashCode();
       }
       hash = (29 * hash) + getUnknownFields().hashCode();
       return hash;
@@ -11051,6 +11871,7 @@ public final class Messages {
           getResponseHeaderFieldBuilder();
           getListDataFieldBuilder();
           getStopScoreFieldBuilder();
+          getStopInformationFieldBuilder();
         }
       }
       private static Builder create() {
@@ -11076,6 +11897,12 @@ public final class Messages {
           bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           stopScoreBuilder_.clear();
+        }
+        if (stopInformationBuilder_ == null) {
+          stopInformation_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000008);
+        } else {
+          stopInformationBuilder_.clear();
         }
         return this;
       }
@@ -11140,6 +11967,15 @@ public final class Messages {
           result.stopScore_ = stopScore_;
         } else {
           result.stopScore_ = stopScoreBuilder_.build();
+        }
+        if (stopInformationBuilder_ == null) {
+          if (((bitField0_ & 0x00000008) == 0x00000008)) {
+            stopInformation_ = java.util.Collections.unmodifiableList(stopInformation_);
+            bitField0_ = (bitField0_ & ~0x00000008);
+          }
+          result.stopInformation_ = stopInformation_;
+        } else {
+          result.stopInformation_ = stopInformationBuilder_.build();
         }
         result.bitField0_ = to_bitField0_;
         onBuilt();
@@ -11212,6 +12048,32 @@ public final class Messages {
             }
           }
         }
+        if (stopInformationBuilder_ == null) {
+          if (!other.stopInformation_.isEmpty()) {
+            if (stopInformation_.isEmpty()) {
+              stopInformation_ = other.stopInformation_;
+              bitField0_ = (bitField0_ & ~0x00000008);
+            } else {
+              ensureStopInformationIsMutable();
+              stopInformation_.addAll(other.stopInformation_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.stopInformation_.isEmpty()) {
+            if (stopInformationBuilder_.isEmpty()) {
+              stopInformationBuilder_.dispose();
+              stopInformationBuilder_ = null;
+              stopInformation_ = other.stopInformation_;
+              bitField0_ = (bitField0_ & ~0x00000008);
+              stopInformationBuilder_ = 
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
+                   getStopInformationFieldBuilder() : null;
+            } else {
+              stopInformationBuilder_.addAllMessages(other.stopInformation_);
+            }
+          }
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
       }
@@ -11268,6 +12130,12 @@ public final class Messages {
               se.poochoo.proto.Messages.StopScore.Builder subBuilder = se.poochoo.proto.Messages.StopScore.newBuilder();
               input.readMessage(subBuilder, extensionRegistry);
               addStopScore(subBuilder.buildPartial());
+              break;
+            }
+            case 50: {
+              se.poochoo.proto.Messages.StopInformation.Builder subBuilder = se.poochoo.proto.Messages.StopInformation.newBuilder();
+              input.readMessage(subBuilder, extensionRegistry);
+              addStopInformation(subBuilder.buildPartial());
               break;
             }
           }
@@ -11736,6 +12604,192 @@ public final class Messages {
           stopScore_ = null;
         }
         return stopScoreBuilder_;
+      }
+      
+      // repeated .poochoo.StopInformation stopInformation = 6;
+      private java.util.List<se.poochoo.proto.Messages.StopInformation> stopInformation_ =
+        java.util.Collections.emptyList();
+      private void ensureStopInformationIsMutable() {
+        if (!((bitField0_ & 0x00000008) == 0x00000008)) {
+          stopInformation_ = new java.util.ArrayList<se.poochoo.proto.Messages.StopInformation>(stopInformation_);
+          bitField0_ |= 0x00000008;
+         }
+      }
+      
+      private com.google.protobuf.RepeatedFieldBuilder<
+          se.poochoo.proto.Messages.StopInformation, se.poochoo.proto.Messages.StopInformation.Builder, se.poochoo.proto.Messages.StopInformationOrBuilder> stopInformationBuilder_;
+      
+      public java.util.List<se.poochoo.proto.Messages.StopInformation> getStopInformationList() {
+        if (stopInformationBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(stopInformation_);
+        } else {
+          return stopInformationBuilder_.getMessageList();
+        }
+      }
+      public int getStopInformationCount() {
+        if (stopInformationBuilder_ == null) {
+          return stopInformation_.size();
+        } else {
+          return stopInformationBuilder_.getCount();
+        }
+      }
+      public se.poochoo.proto.Messages.StopInformation getStopInformation(int index) {
+        if (stopInformationBuilder_ == null) {
+          return stopInformation_.get(index);
+        } else {
+          return stopInformationBuilder_.getMessage(index);
+        }
+      }
+      public Builder setStopInformation(
+          int index, se.poochoo.proto.Messages.StopInformation value) {
+        if (stopInformationBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureStopInformationIsMutable();
+          stopInformation_.set(index, value);
+          onChanged();
+        } else {
+          stopInformationBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      public Builder setStopInformation(
+          int index, se.poochoo.proto.Messages.StopInformation.Builder builderForValue) {
+        if (stopInformationBuilder_ == null) {
+          ensureStopInformationIsMutable();
+          stopInformation_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          stopInformationBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      public Builder addStopInformation(se.poochoo.proto.Messages.StopInformation value) {
+        if (stopInformationBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureStopInformationIsMutable();
+          stopInformation_.add(value);
+          onChanged();
+        } else {
+          stopInformationBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      public Builder addStopInformation(
+          int index, se.poochoo.proto.Messages.StopInformation value) {
+        if (stopInformationBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureStopInformationIsMutable();
+          stopInformation_.add(index, value);
+          onChanged();
+        } else {
+          stopInformationBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      public Builder addStopInformation(
+          se.poochoo.proto.Messages.StopInformation.Builder builderForValue) {
+        if (stopInformationBuilder_ == null) {
+          ensureStopInformationIsMutable();
+          stopInformation_.add(builderForValue.build());
+          onChanged();
+        } else {
+          stopInformationBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      public Builder addStopInformation(
+          int index, se.poochoo.proto.Messages.StopInformation.Builder builderForValue) {
+        if (stopInformationBuilder_ == null) {
+          ensureStopInformationIsMutable();
+          stopInformation_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          stopInformationBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      public Builder addAllStopInformation(
+          java.lang.Iterable<? extends se.poochoo.proto.Messages.StopInformation> values) {
+        if (stopInformationBuilder_ == null) {
+          ensureStopInformationIsMutable();
+          super.addAll(values, stopInformation_);
+          onChanged();
+        } else {
+          stopInformationBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      public Builder clearStopInformation() {
+        if (stopInformationBuilder_ == null) {
+          stopInformation_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000008);
+          onChanged();
+        } else {
+          stopInformationBuilder_.clear();
+        }
+        return this;
+      }
+      public Builder removeStopInformation(int index) {
+        if (stopInformationBuilder_ == null) {
+          ensureStopInformationIsMutable();
+          stopInformation_.remove(index);
+          onChanged();
+        } else {
+          stopInformationBuilder_.remove(index);
+        }
+        return this;
+      }
+      public se.poochoo.proto.Messages.StopInformation.Builder getStopInformationBuilder(
+          int index) {
+        return getStopInformationFieldBuilder().getBuilder(index);
+      }
+      public se.poochoo.proto.Messages.StopInformationOrBuilder getStopInformationOrBuilder(
+          int index) {
+        if (stopInformationBuilder_ == null) {
+          return stopInformation_.get(index);  } else {
+          return stopInformationBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      public java.util.List<? extends se.poochoo.proto.Messages.StopInformationOrBuilder> 
+           getStopInformationOrBuilderList() {
+        if (stopInformationBuilder_ != null) {
+          return stopInformationBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(stopInformation_);
+        }
+      }
+      public se.poochoo.proto.Messages.StopInformation.Builder addStopInformationBuilder() {
+        return getStopInformationFieldBuilder().addBuilder(
+            se.poochoo.proto.Messages.StopInformation.getDefaultInstance());
+      }
+      public se.poochoo.proto.Messages.StopInformation.Builder addStopInformationBuilder(
+          int index) {
+        return getStopInformationFieldBuilder().addBuilder(
+            index, se.poochoo.proto.Messages.StopInformation.getDefaultInstance());
+      }
+      public java.util.List<se.poochoo.proto.Messages.StopInformation.Builder> 
+           getStopInformationBuilderList() {
+        return getStopInformationFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilder<
+          se.poochoo.proto.Messages.StopInformation, se.poochoo.proto.Messages.StopInformation.Builder, se.poochoo.proto.Messages.StopInformationOrBuilder> 
+          getStopInformationFieldBuilder() {
+        if (stopInformationBuilder_ == null) {
+          stopInformationBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
+              se.poochoo.proto.Messages.StopInformation, se.poochoo.proto.Messages.StopInformation.Builder, se.poochoo.proto.Messages.StopInformationOrBuilder>(
+                  stopInformation_,
+                  ((bitField0_ & 0x00000008) == 0x00000008),
+                  getParentForChildren(),
+                  isClean());
+          stopInformation_ = null;
+        }
+        return stopInformationBuilder_;
       }
       
       // @@protoc_insertion_point(builder_scope:poochoo.SmartResponse)
@@ -13427,6 +14481,11 @@ public final class Messages {
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_poochoo_DataSelector_fieldAccessorTable;
   private static com.google.protobuf.Descriptors.Descriptor
+    internal_static_poochoo_StopInformation_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_poochoo_StopInformation_fieldAccessorTable;
+  private static com.google.protobuf.Descriptors.Descriptor
     internal_static_poochoo_SelectionDeviceData_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
@@ -13526,67 +14585,71 @@ public final class Messages {
       "ClientId\"<\n\010ClientId\022\013\n\007UNKNOWN\020\000\022\r\n\tWEB" +
       "_DEBUG\020\001\022\013\n\007ANDROID\020\002\022\007\n\003IOS\020\003\"D\n\014DataSe" +
       "lector\022\013\n\003sid\030\001 \001(\003\022\024\n\014resourceHash\030\002 \001(" +
-      "\005\022\021\n\005metro\030\003 \001(\010B\002\030\001\"\325\001\n\023SelectionDevice" +
-      "Data\0227\n\010position\030\001 \001(\0132%.poochoo.Selecti" +
-      "onDeviceData.Position\022?\n\020previousPositio" +
-      "n\030\002 \003(\0132%.poochoo.SelectionDeviceData.Po",
-      "sition\032D\n\010Position\022\013\n\003lat\030\001 \002(\001\022\013\n\003lng\030\002" +
-      " \002(\001\022\020\n\010accuracy\030\003 \001(\005\022\014\n\004time\030\004 \001(\003\"p\n\021" +
-      "SelectionUserData\022-\n\npromotions\030\001 \003(\0132\031." +
-      "poochoo.StopDataSelector\022,\n\tdemotions\030\002 " +
-      "\003(\0132\031.poochoo.StopDataSelector\"\305\001\n\020StopD" +
-      "ataSelector\022\013\n\003sid\030\001 \001(\003\022N\n\025departureDat" +
-      "aSelector\030\002 \003(\0132/.poochoo.StopDataSelect" +
-      "or.DepartureDataSelector\032T\n\025DepartureDat" +
-      "aSelector\022\024\n\014resourceHash\030\001 \001(\005\022\021\n\005metro" +
-      "\030\002 \001(\010B\002\030\001\022\022\n\nmultiplier\030\003 \001(\005\"!\n\023SmartR",
-      "esponseHeader\022\n\n\002id\030\001 \001(\005\"\034\n\013SearchQuery" +
-      "\022\r\n\005query\030\001 \001(\t\"\360\003\n\010ListItem\022\025\n\rdepartur" +
-      "eTime\030\001 \001(\t\022\025\n\rdepartureName\030\002 \001(\t\022\020\n\010st" +
-      "opName\030\003 \001(\t\022\030\n\020departureMessage\030\010 \001(\t\022\026" +
-      "\n\016departureColor\030\t \001(\r\0222\n\013trafficType\030\004 " +
-      "\001(\0162\035.poochoo.ListItem.TrafficType\022\035\n\005sc" +
-      "ore\030\005 \001(\0132\016.poochoo.Score\022\023\n\013secondsLeft" +
-      "\030\006 \001(\005\022\020\n\010realtime\030\007 \001(\010\022B\n\023proximityAss" +
-      "essment\030\n \001(\0162%.poochoo.ListItem.Proximi" +
-      "tyAssessment\"B\n\013TrafficType\022\t\n\005METRO\020\001\022\t",
-      "\n\005TRAIN\020\002\022\010\n\004TRAM\020\003\022\007\n\003BUS\020\004\022\n\n\006UNKOWN\020\005" +
-      "\"p\n\023ProximityAssessment\022\013\n\007UNKNOWN\020\000\022\013\n\007" +
-      "RELAXED\020\001\022\021\n\rMOVE_YOUR_ASS\020\002\022\016\n\nRUN_FOR_" +
-      "IT\020\003\022\014\n\010STAY_PUT\020\004\022\016\n\nIMPOSSIBLE\020\005\"\363\001\n\tS" +
-      "coreItem\022/\n\tscoreType\030\001 \001(\0162\034.poochoo.Sc" +
-      "oreItem.ScoreType\022\r\n\005score\030\002 \001(\005\"\245\001\n\tSco" +
-      "reType\022\020\n\014TRAFFIC_TYPE\020\001\022\014\n\010DISTANCE\020\002\022\022" +
-      "\n\016USER_PROMOTION\020\003\022\021\n\rUSER_DEMOTION\020\004\022\010\n" +
-      "\004TIME\020\005\022\020\n\014SEARCH_QUERY\020\006\022\023\n\017DEPARTURE_C" +
-      "OUNT\020\007\022 \n\034USER_PROMOTION_AT_OTHER_STOP\020\010",
-      "\"?\n\005Score\022\r\n\005score\030\001 \001(\005\022\'\n\013scoreByItem\030" +
-      "\002 \003(\0132\022.poochoo.ScoreItem\"\253\001\n\tStopScore\022" +
-      "\020\n\010stopName\030\001 \001(\t\022\r\n\005score\030\002 \001(\005\022\'\n\013scor" +
-      "eByItem\030\003 \003(\0132\022.poochoo.ScoreItem\022\013\n\003sid" +
-      "\030\004 \001(\003\0227\n\010position\030\005 \001(\0132%.poochoo.Selec" +
-      "tionDeviceData.Position\022\016\n\006loaded\030\006 \001(\010\"" +
-      "`\n\rSmartListData\022\'\n\010selector\030\001 \001(\0132\025.poo" +
-      "choo.DataSelector\022&\n\013displayItem\030\002 \001(\0132\021" +
-      ".poochoo.ListItem\"\222\002\n\014SmartRequest\0222\n\rre" +
-      "questHeader\030\001 \001(\0132\033.poochoo.SmartRequest",
-      "Header\0220\n\ndeviceData\030\002 \001(\0132\034.poochoo.Sel" +
-      "ectionDeviceData\0221\n\ruserSelection\030\003 \001(\0132" +
-      "\032.poochoo.SelectionUserData\022)\n\013searchQue" +
-      "ry\030\005 \001(\0132\024.poochoo.SearchQuery\022/\n\020explic" +
-      "itSelector\030\006 \003(\0132\025.poochoo.DataSelector\022" +
-      "\r\n\005debug\030\004 \001(\010\"\226\001\n\rSmartResponse\0224\n\016resp" +
-      "onseHeader\030\001 \001(\0132\034.poochoo.SmartResponse" +
-      "Header\022(\n\010listData\030\002 \003(\0132\026.poochoo.Smart" +
-      "ListData\022%\n\tstopScore\030\003 \003(\0132\022.poochoo.St" +
-      "opScore\"2\n\020UserFeedbackData\022\017\n\007message\030\001",
-      " \001(\t\022\r\n\005email\030\002 \001(\t\"\230\001\n\023UserFeedbackRequ" +
-      "est\022&\n\007request\030\001 \001(\0132\025.poochoo.SmartRequ" +
-      "est\022(\n\010response\030\002 \001(\0132\026.poochoo.SmartRes" +
-      "ponse\022/\n\014feedBackData\030\003 \001(\0132\031.poochoo.Us" +
-      "erFeedbackData\"\'\n\024UserFeedbackResponse\022\017" +
-      "\n\007success\030\001 \001(\010B\037\n\020se.poochoo.protoB\010Mes" +
-      "sages\240\001\001"
+      "\005\022\021\n\005metro\030\003 \001(\010B\002\030\001\"^\n\017StopInformation\022" +
+      "\013\n\003sid\030\001 \001(\003\022\021\n\tshortName\030\002 \001(\t\022\021\n\tlongt" +
+      "Name\030\003 \001(\t\022\013\n\003lat\030\004 \001(\001\022\013\n\003lng\030\005 \001(\001\"\325\001\n" +
+      "\023SelectionDeviceData\0227\n\010position\030\001 \001(\0132%",
+      ".poochoo.SelectionDeviceData.Position\022?\n" +
+      "\020previousPosition\030\002 \003(\0132%.poochoo.Select" +
+      "ionDeviceData.Position\032D\n\010Position\022\013\n\003la" +
+      "t\030\001 \002(\001\022\013\n\003lng\030\002 \002(\001\022\020\n\010accuracy\030\003 \001(\005\022\014" +
+      "\n\004time\030\004 \001(\003\"p\n\021SelectionUserData\022-\n\npro" +
+      "motions\030\001 \003(\0132\031.poochoo.StopDataSelector" +
+      "\022,\n\tdemotions\030\002 \003(\0132\031.poochoo.StopDataSe" +
+      "lector\"\305\001\n\020StopDataSelector\022\013\n\003sid\030\001 \001(\003" +
+      "\022N\n\025departureDataSelector\030\002 \003(\0132/.poocho" +
+      "o.StopDataSelector.DepartureDataSelector",
+      "\032T\n\025DepartureDataSelector\022\024\n\014resourceHas" +
+      "h\030\001 \001(\005\022\021\n\005metro\030\002 \001(\010B\002\030\001\022\022\n\nmultiplier" +
+      "\030\003 \001(\005\"!\n\023SmartResponseHeader\022\n\n\002id\030\001 \001(" +
+      "\005\"\034\n\013SearchQuery\022\r\n\005query\030\001 \001(\t\"\360\003\n\010List" +
+      "Item\022\025\n\rdepartureTime\030\001 \001(\t\022\025\n\rdeparture" +
+      "Name\030\002 \001(\t\022\020\n\010stopName\030\003 \001(\t\022\030\n\020departur" +
+      "eMessage\030\010 \001(\t\022\026\n\016departureColor\030\t \001(\r\0222" +
+      "\n\013trafficType\030\004 \001(\0162\035.poochoo.ListItem.T" +
+      "rafficType\022\035\n\005score\030\005 \001(\0132\016.poochoo.Scor" +
+      "e\022\023\n\013secondsLeft\030\006 \001(\005\022\020\n\010realtime\030\007 \001(\010",
+      "\022B\n\023proximityAssessment\030\n \001(\0162%.poochoo." +
+      "ListItem.ProximityAssessment\"B\n\013TrafficT" +
+      "ype\022\t\n\005METRO\020\001\022\t\n\005TRAIN\020\002\022\010\n\004TRAM\020\003\022\007\n\003B" +
+      "US\020\004\022\n\n\006UNKOWN\020\005\"p\n\023ProximityAssessment\022" +
+      "\013\n\007UNKNOWN\020\000\022\013\n\007RELAXED\020\001\022\021\n\rMOVE_YOUR_A" +
+      "SS\020\002\022\016\n\nRUN_FOR_IT\020\003\022\014\n\010STAY_PUT\020\004\022\016\n\nIM" +
+      "POSSIBLE\020\005\"\363\001\n\tScoreItem\022/\n\tscoreType\030\001 " +
+      "\001(\0162\034.poochoo.ScoreItem.ScoreType\022\r\n\005sco" +
+      "re\030\002 \001(\005\"\245\001\n\tScoreType\022\020\n\014TRAFFIC_TYPE\020\001" +
+      "\022\014\n\010DISTANCE\020\002\022\022\n\016USER_PROMOTION\020\003\022\021\n\rUS",
+      "ER_DEMOTION\020\004\022\010\n\004TIME\020\005\022\020\n\014SEARCH_QUERY\020" +
+      "\006\022\023\n\017DEPARTURE_COUNT\020\007\022 \n\034USER_PROMOTION" +
+      "_AT_OTHER_STOP\020\010\"?\n\005Score\022\r\n\005score\030\001 \001(\005" +
+      "\022\'\n\013scoreByItem\030\002 \003(\0132\022.poochoo.ScoreIte" +
+      "m\"\253\001\n\tStopScore\022\020\n\010stopName\030\001 \001(\t\022\r\n\005sco" +
+      "re\030\002 \001(\005\022\'\n\013scoreByItem\030\003 \003(\0132\022.poochoo." +
+      "ScoreItem\022\013\n\003sid\030\004 \001(\003\0227\n\010position\030\005 \001(\013" +
+      "2%.poochoo.SelectionDeviceData.Position\022" +
+      "\016\n\006loaded\030\006 \001(\010\"`\n\rSmartListData\022\'\n\010sele" +
+      "ctor\030\001 \001(\0132\025.poochoo.DataSelector\022&\n\013dis",
+      "playItem\030\002 \001(\0132\021.poochoo.ListItem\"\257\002\n\014Sm" +
+      "artRequest\0222\n\rrequestHeader\030\001 \001(\0132\033.pooc" +
+      "hoo.SmartRequestHeader\0220\n\ndeviceData\030\002 \001" +
+      "(\0132\034.poochoo.SelectionDeviceData\0221\n\ruser" +
+      "Selection\030\003 \001(\0132\032.poochoo.SelectionUserD" +
+      "ata\022)\n\013searchQuery\030\005 \001(\0132\024.poochoo.Searc" +
+      "hQuery\022/\n\020explicitSelector\030\006 \003(\0132\025.pooch" +
+      "oo.DataSelector\022\r\n\005debug\030\004 \001(\010\022\033\n\023stopIn" +
+      "formationOnly\030\007 \001(\010\"\311\001\n\rSmartResponse\0224\n" +
+      "\016responseHeader\030\001 \001(\0132\034.poochoo.SmartRes",
+      "ponseHeader\022(\n\010listData\030\002 \003(\0132\026.poochoo." +
+      "SmartListData\022%\n\tstopScore\030\003 \003(\0132\022.pooch" +
+      "oo.StopScore\0221\n\017stopInformation\030\006 \003(\0132\030." +
+      "poochoo.StopInformation\"2\n\020UserFeedbackD" +
+      "ata\022\017\n\007message\030\001 \001(\t\022\r\n\005email\030\002 \001(\t\"\230\001\n\023" +
+      "UserFeedbackRequest\022&\n\007request\030\001 \001(\0132\025.p" +
+      "oochoo.SmartRequest\022(\n\010response\030\002 \001(\0132\026." +
+      "poochoo.SmartResponse\022/\n\014feedBackData\030\003 " +
+      "\001(\0132\031.poochoo.UserFeedbackData\"\'\n\024UserFe" +
+      "edbackResponse\022\017\n\007success\030\001 \001(\010B\037\n\020se.po",
+      "ochoo.protoB\010Messages\240\001\001"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
       new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -13609,8 +14672,16 @@ public final class Messages {
               new java.lang.String[] { "Sid", "ResourceHash", "Metro", },
               se.poochoo.proto.Messages.DataSelector.class,
               se.poochoo.proto.Messages.DataSelector.Builder.class);
-          internal_static_poochoo_SelectionDeviceData_descriptor =
+          internal_static_poochoo_StopInformation_descriptor =
             getDescriptor().getMessageTypes().get(2);
+          internal_static_poochoo_StopInformation_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+              internal_static_poochoo_StopInformation_descriptor,
+              new java.lang.String[] { "Sid", "ShortName", "LongtName", "Lat", "Lng", },
+              se.poochoo.proto.Messages.StopInformation.class,
+              se.poochoo.proto.Messages.StopInformation.Builder.class);
+          internal_static_poochoo_SelectionDeviceData_descriptor =
+            getDescriptor().getMessageTypes().get(3);
           internal_static_poochoo_SelectionDeviceData_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_poochoo_SelectionDeviceData_descriptor,
@@ -13626,7 +14697,7 @@ public final class Messages {
               se.poochoo.proto.Messages.SelectionDeviceData.Position.class,
               se.poochoo.proto.Messages.SelectionDeviceData.Position.Builder.class);
           internal_static_poochoo_SelectionUserData_descriptor =
-            getDescriptor().getMessageTypes().get(3);
+            getDescriptor().getMessageTypes().get(4);
           internal_static_poochoo_SelectionUserData_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_poochoo_SelectionUserData_descriptor,
@@ -13634,7 +14705,7 @@ public final class Messages {
               se.poochoo.proto.Messages.SelectionUserData.class,
               se.poochoo.proto.Messages.SelectionUserData.Builder.class);
           internal_static_poochoo_StopDataSelector_descriptor =
-            getDescriptor().getMessageTypes().get(4);
+            getDescriptor().getMessageTypes().get(5);
           internal_static_poochoo_StopDataSelector_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_poochoo_StopDataSelector_descriptor,
@@ -13650,7 +14721,7 @@ public final class Messages {
               se.poochoo.proto.Messages.StopDataSelector.DepartureDataSelector.class,
               se.poochoo.proto.Messages.StopDataSelector.DepartureDataSelector.Builder.class);
           internal_static_poochoo_SmartResponseHeader_descriptor =
-            getDescriptor().getMessageTypes().get(5);
+            getDescriptor().getMessageTypes().get(6);
           internal_static_poochoo_SmartResponseHeader_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_poochoo_SmartResponseHeader_descriptor,
@@ -13658,7 +14729,7 @@ public final class Messages {
               se.poochoo.proto.Messages.SmartResponseHeader.class,
               se.poochoo.proto.Messages.SmartResponseHeader.Builder.class);
           internal_static_poochoo_SearchQuery_descriptor =
-            getDescriptor().getMessageTypes().get(6);
+            getDescriptor().getMessageTypes().get(7);
           internal_static_poochoo_SearchQuery_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_poochoo_SearchQuery_descriptor,
@@ -13666,7 +14737,7 @@ public final class Messages {
               se.poochoo.proto.Messages.SearchQuery.class,
               se.poochoo.proto.Messages.SearchQuery.Builder.class);
           internal_static_poochoo_ListItem_descriptor =
-            getDescriptor().getMessageTypes().get(7);
+            getDescriptor().getMessageTypes().get(8);
           internal_static_poochoo_ListItem_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_poochoo_ListItem_descriptor,
@@ -13674,7 +14745,7 @@ public final class Messages {
               se.poochoo.proto.Messages.ListItem.class,
               se.poochoo.proto.Messages.ListItem.Builder.class);
           internal_static_poochoo_ScoreItem_descriptor =
-            getDescriptor().getMessageTypes().get(8);
+            getDescriptor().getMessageTypes().get(9);
           internal_static_poochoo_ScoreItem_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_poochoo_ScoreItem_descriptor,
@@ -13682,7 +14753,7 @@ public final class Messages {
               se.poochoo.proto.Messages.ScoreItem.class,
               se.poochoo.proto.Messages.ScoreItem.Builder.class);
           internal_static_poochoo_Score_descriptor =
-            getDescriptor().getMessageTypes().get(9);
+            getDescriptor().getMessageTypes().get(10);
           internal_static_poochoo_Score_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_poochoo_Score_descriptor,
@@ -13690,7 +14761,7 @@ public final class Messages {
               se.poochoo.proto.Messages.Score.class,
               se.poochoo.proto.Messages.Score.Builder.class);
           internal_static_poochoo_StopScore_descriptor =
-            getDescriptor().getMessageTypes().get(10);
+            getDescriptor().getMessageTypes().get(11);
           internal_static_poochoo_StopScore_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_poochoo_StopScore_descriptor,
@@ -13698,7 +14769,7 @@ public final class Messages {
               se.poochoo.proto.Messages.StopScore.class,
               se.poochoo.proto.Messages.StopScore.Builder.class);
           internal_static_poochoo_SmartListData_descriptor =
-            getDescriptor().getMessageTypes().get(11);
+            getDescriptor().getMessageTypes().get(12);
           internal_static_poochoo_SmartListData_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_poochoo_SmartListData_descriptor,
@@ -13706,23 +14777,23 @@ public final class Messages {
               se.poochoo.proto.Messages.SmartListData.class,
               se.poochoo.proto.Messages.SmartListData.Builder.class);
           internal_static_poochoo_SmartRequest_descriptor =
-            getDescriptor().getMessageTypes().get(12);
+            getDescriptor().getMessageTypes().get(13);
           internal_static_poochoo_SmartRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_poochoo_SmartRequest_descriptor,
-              new java.lang.String[] { "RequestHeader", "DeviceData", "UserSelection", "SearchQuery", "ExplicitSelector", "Debug", },
+              new java.lang.String[] { "RequestHeader", "DeviceData", "UserSelection", "SearchQuery", "ExplicitSelector", "Debug", "StopInformationOnly", },
               se.poochoo.proto.Messages.SmartRequest.class,
               se.poochoo.proto.Messages.SmartRequest.Builder.class);
           internal_static_poochoo_SmartResponse_descriptor =
-            getDescriptor().getMessageTypes().get(13);
+            getDescriptor().getMessageTypes().get(14);
           internal_static_poochoo_SmartResponse_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_poochoo_SmartResponse_descriptor,
-              new java.lang.String[] { "ResponseHeader", "ListData", "StopScore", },
+              new java.lang.String[] { "ResponseHeader", "ListData", "StopScore", "StopInformation", },
               se.poochoo.proto.Messages.SmartResponse.class,
               se.poochoo.proto.Messages.SmartResponse.Builder.class);
           internal_static_poochoo_UserFeedbackData_descriptor =
-            getDescriptor().getMessageTypes().get(14);
+            getDescriptor().getMessageTypes().get(15);
           internal_static_poochoo_UserFeedbackData_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_poochoo_UserFeedbackData_descriptor,
@@ -13730,7 +14801,7 @@ public final class Messages {
               se.poochoo.proto.Messages.UserFeedbackData.class,
               se.poochoo.proto.Messages.UserFeedbackData.Builder.class);
           internal_static_poochoo_UserFeedbackRequest_descriptor =
-            getDescriptor().getMessageTypes().get(15);
+            getDescriptor().getMessageTypes().get(16);
           internal_static_poochoo_UserFeedbackRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_poochoo_UserFeedbackRequest_descriptor,
@@ -13738,7 +14809,7 @@ public final class Messages {
               se.poochoo.proto.Messages.UserFeedbackRequest.class,
               se.poochoo.proto.Messages.UserFeedbackRequest.Builder.class);
           internal_static_poochoo_UserFeedbackResponse_descriptor =
-            getDescriptor().getMessageTypes().get(16);
+            getDescriptor().getMessageTypes().get(17);
           internal_static_poochoo_UserFeedbackResponse_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_poochoo_UserFeedbackResponse_descriptor,
